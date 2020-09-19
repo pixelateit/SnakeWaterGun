@@ -13,6 +13,9 @@ def games():
             print("Press", key, "for", value, "\n", end="")
 
         options_name = input()
+        # if options_name is not "s" or "w" or "g":
+        #     print("Wrong Input!")
+        #     options_name = input("Select your player: ")
 
         print("User Player : ", options[options_name], "\n", end="")
         lis = list(options.values())
@@ -20,22 +23,26 @@ def games():
         print("Computer Player : ", choice, "\n", end="")
         if choice == options[options_name]:
             print("Try again!")
-        elif choice != options[options_name]:
+        else:
             if choice == "Snake" and options[options_name] == "Water":
                 print(choice, "Computer Wins!", points1, "points earned.", "\n", end="")
                 print()
+                points1 += 1
             elif choice == "Water" and options[options_name] == "Gun":
                 print(choice, "Computer Wins!", points1, "points earned.", "\n", end="")
                 print()
+                points1 += 1
             elif choice == "Gun" and options[options_name] == "Snake":
                 print(choice, "Computer Wins!", points1, "points earned.", "\n", end="")
                 print()
+                points1 += 1
 
             else:
                 print(options[options_name], "Player Wins!", points2, "points earned.", "\n", end="")
                 print()
                 points2 += 1
-            points1 += 1
+
+                # points1 += 1
 
         print(no_of_games, " Numbers of Games Played.")
         no_of_games += 1
