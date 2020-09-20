@@ -13,8 +13,12 @@ def games():
         for key, value in options.items():
             print("Press", key, "for", value, "\n", end="")
 
-        options_names = str(input())
-        options_name = options_names.lower()
+        options_name = str(input()).lower()
+
+        while options_name not in list(options.keys()):
+            print("wrong input!")
+            print("Try Again!: ")
+            options_name = str(input()).lower()
 
         print("User Player : ", options[options_name], "\n", end="")
         lis = list(options.values())
