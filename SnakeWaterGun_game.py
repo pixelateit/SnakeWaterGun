@@ -6,19 +6,21 @@ def games():
     no_of_games = 1
     points1 = 0
     points2 = 0
-    print("\t \t \t \t \t \t \t \t \t \tSnake Water Gun\n \n")
+    print("\t \t \t \t \t \t \t \t \t \tSnake Water Gun\n ")
     while no_of_games <= 10:
 
         print("Select your player: ")
         for key, value in options.items():
             print("Press", key, "for", value, "\n", end="")
 
-        options_name = input()
+        options_names = str(input())
+        options_name = options_names.lower()
 
         print("User Player : ", options[options_name], "\n", end="")
         lis = list(options.values())
         choice = random.choice(lis)
         print("Computer Player : ", choice, "\n", end="")
+
         if choice == options[options_name]:
             print("Try again! \n \n")
         else:
